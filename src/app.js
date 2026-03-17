@@ -18,9 +18,11 @@ app.use("/api/auth", authRoutes);
 const productRoutes = require("./routes/product.routes");
 const categoryRoutes = require("./routes/category.routes");
 const transactionRoutes = require("./routes/transaction.routes");
+const profileRoutes = require("./routes/profile.routes");
 
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/transactions", transactionRoutes);
+app.use("/api/profile", profileRoutes);
 
 module.exports = app;
