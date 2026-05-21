@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3306",
+        url: `http://localhost:${process.env.PORT || 5000}`,
       },
     ],
   },

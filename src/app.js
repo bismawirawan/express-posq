@@ -11,6 +11,10 @@ const swaggerSpec = require("./docs/swagger");
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+app.get("/", (req, res) => {
+	res.redirect("/api-docs");
+});
+
 const authRoutes = require("./routes/auth.routes");
 
 app.use("/api/auth", authRoutes);
@@ -19,10 +23,12 @@ const productRoutes = require("./routes/product.routes");
 const categoryRoutes = require("./routes/category.routes");
 const transactionRoutes = require("./routes/transaction.routes");
 const profileRoutes = require("./routes/profile.routes");
+const savingsRoutes = require("./routes/savings.routes");
 
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/savings", savingsRoutes);
 
 module.exports = app;

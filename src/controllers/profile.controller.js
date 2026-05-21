@@ -26,7 +26,7 @@ exports.getProfile = async (req, res) => {
       data: user,
     });
   } catch (error) {
-    res.status(500).json({ result:false, error: error.message });
+    res.status(500).json({ status:false, error: error.message });
   }
 };
 
